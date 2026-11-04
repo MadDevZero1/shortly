@@ -86,7 +86,7 @@ try {
   await page.waitForURL(base+'/');
   assert.deepEqual(failures,[]);
   console.log('PASS: password checks, managed sign-up, session, create, result, public redirect, private analytics, deletion, reload, sign-out and protected route; no page exceptions.');
-  console.log('Screenshots saved under docs/screenshots. Synthetic account retained on development branch only.');
+  console.log(`Screenshots saved under docs/screenshots. Synthetic account retained on ${base.includes('localhost') ? 'development' : 'production'} Auth branch; test link deleted.`);
 } catch(error) {
   if(currentPage){await currentPage.screenshot({path:new URL('browser-failure.png',output).pathname.replace(/^\/([A-Za-z]:)/,'$1'),fullPage:true});console.error('Visible errors:',await currentPage.getByRole('alert').allTextContents());}
   throw error;

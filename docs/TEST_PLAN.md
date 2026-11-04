@@ -61,7 +61,7 @@ Future commands and pass/fail totals must be entered after execution. Planned te
 - frontend/npm.cmd audit fix --legacy-peer-deps: compatible patch applied; **0 vulnerabilities** reported. Replaced legacy SDK with @neon/neon-js 0.10.2. Backend and QA install audits also reported zero vulnerabilities.
 - Postman collection exported with assertions; **not executed** with Postman/Newman. Higgsfield generation rejected by account plan; no generated asset claimed.
 
-Not verified: Safari, recovery email delivery/reset against a received message, full accessibility audit, clean-machine clone/setup, full production gateway cookie/session journey, Render Blueprint platform validation, deployed backend journey and production performance.
+Not verified: Safari, recovery email delivery/reset against a received message, full accessibility audit, clean-machine clone/setup, Render Blueprint platform validation and production performance.
 
 ## Deployment progress, 2026-11-04
 - Private GitHub repository `space-rock-0/shortly` received commit `a510a3d` on main; no .env, node_modules, dist or browser-failure image was tracked.
@@ -69,3 +69,11 @@ Not verified: Safari, recovery email delivery/reset against a received message, 
 - Production Neon branch has isolated shortly database with urls/clicks schema and managed Auth on neondb. No production user journey has been completed.
 - Vercel production deployment `dpl_BFvz3RWGH581RxWJ9YbEP6meKSLp` reached READY. Public landing page returned HTTP 200 and `/neon-auth/get-session` returned JSON with HTTP 200. The backend is still unavailable, so authenticated app flow on live hosts is unverified.
 - Render service creation returned `repository URL is invalid or unfetchable` for the private repository. Its GitHub integration needs access before creation can continue.
+
+## Live release verification, 2026-11-04
+- Public repository `MadDevZero1/shortly` main at `e6f7996` contains 71 source/documentation files and no screenshots. Local screenshots are ignored and retained on disk.
+- Render service `srv-dblm5lp5efls73e6e9eg` deployed commit `e6f7996` to https://shortly-api-stbw.onrender.com. `/api/health` returned 200 with database available; CORS allowed the exact frontend origin and DELETE method.
+- Vercel production deployment `dpl_FxxePnyzmEp9aEMjdDJAVX7AnsgX` reached READY at https://shortly-vault-cf00.vercel.app. Its public page and same-origin Auth gateway returned 200.
+- Approved synthetic production browser test passed sign-up with password confirmation/rules and show/hide, session restoration, creation, short URL 302 to the destination, private analytics, owner deletion, deleted URL 404, sign-out and sign-in again. No page exceptions or mobile horizontal overflow at checked widths. The test link was deleted; the synthetic Auth account remains on production.
+- The password complexity checks are enforced by the app UI for sign-up and reset. Managed Neon Auth is the identity provider; its direct sign-up endpoint may have a different password policy.
+- A backend test rerun inside the restricted shell failed with loopback `EACCES`; the same unchanged suite passed **11/11** when rerun with local socket access.

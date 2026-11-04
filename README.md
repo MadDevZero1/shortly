@@ -6,7 +6,7 @@ The application root is this `Project` directory. Public short links redirect to
 
 ## Current verification
 
-Local implementation includes 11 passing backend tests, real Neon SQL/constraints, two-user managed identity/API integration, and an earlier passing Chrome browser journey. Link deletion and stricter registration password checks were added afterward; the latest browser rerun reached registration and creation but hit a temporary backend error before completion. TypeScript/Vite builds succeed and dependency audit reports zero vulnerabilities. Landing, dashboard and analytics screenshots are in local screenshots (excluded from this public repository). The [Vercel frontend](https://shortly-vault-cf00.vercel.app) is deployed; the Render backend is pending private GitHub repository access, so the live app journey is not yet verified. See [TEST_PLAN.md](docs/TEST_PLAN.md).
+Shortly is live at [shortly-vault-cf00.vercel.app](https://shortly-vault-cf00.vercel.app), with its API and short-link redirects at [shortly-api-stbw.onrender.com](https://shortly-api-stbw.onrender.com). A real Chrome production journey passed registration, link creation, 302 redirect, private analytics, deletion, sign-out and sign-in again. The backend has 11 passing automated tests; TypeScript/Vite builds and the prior dependency audit passed. Screenshots remain local and are excluded from this public repository. See [TEST_PLAN.md](docs/TEST_PLAN.md) for remaining release limits.
 
 ## Local setup on Windows
 
