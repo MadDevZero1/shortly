@@ -1,0 +1,1 @@
+{"rewrites":[{"source":"/neon-auth/:path*","destination":"/api/auth?path=:path*"},{"source":"/((?!assets/|api/).*)","destination":"/index.html"}]}

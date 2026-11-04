@@ -6,7 +6,7 @@ The application root is this `Project` directory. Public short links redirect to
 
 ## Current verification
 
-Local implementation includes 11 passing backend tests, real Neon SQL/constraints, two-user managed identity/API integration, and an earlier passing Chrome browser journey. Link deletion and stricter registration password checks were added afterward; the latest browser rerun reached registration and creation but hit a temporary backend error before completion. TypeScript/Vite builds succeed and dependency audit reports zero vulnerabilities. Landing, dashboard and analytics screenshots are in [docs/screenshots](docs/screenshots). The [Vercel frontend](https://shortly-vault-cf00.vercel.app) is deployed; the Render backend is pending private GitHub repository access, so the live app journey is not yet verified. See [TEST_PLAN.md](docs/TEST_PLAN.md).
+Local implementation includes 11 passing backend tests, real Neon SQL/constraints, two-user managed identity/API integration, and an earlier passing Chrome browser journey. Link deletion and stricter registration password checks were added afterward; the latest browser rerun reached registration and creation but hit a temporary backend error before completion. TypeScript/Vite builds succeed and dependency audit reports zero vulnerabilities. Landing, dashboard and analytics screenshots are in local screenshots (excluded from this public repository). The [Vercel frontend](https://shortly-vault-cf00.vercel.app) is deployed; the Render backend is pending private GitHub repository access, so the live app journey is not yet verified. See [TEST_PLAN.md](docs/TEST_PLAN.md).
 
 ## Local setup on Windows
 
@@ -77,4 +77,3 @@ The Vercel frontend also needs server-side NEON_AUTH_BASE_URL for api/auth.js. I
 ## Limits
 
 Analytics are approximate and may include automated traffic or miss events during write failures. The service does not scan destinations for phishing or malware. Public redirects reveal their destinations. Managed sessions require real browser verification across deployment domains; signing out does not immediately revoke already-issued short-lived JWTs. Supporting Higgsfield image generation was attempted but the connected plan rejected generation, so no generated media asset is claimed.
-

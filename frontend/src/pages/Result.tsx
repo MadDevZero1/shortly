@@ -1,0 +1,8 @@
+import { useEffect, useState } from 'react';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowRight, Check } from '@phosphor-icons/react';
+import { api } from '../services/api';
+import type { ShortLink } from '../types';
+import { CopyButton, ErrorBox, Loading } from '../components/ui';
+export function Result(){const{code=''}=useParams(),location=useLocation();const[link,setLink]=useState<ShortLink|null>(location.state?.link||null),[error,setError]=useState('');useEffect(()=>{if(link)return;const controller=new AbortController();api.stats(code,controller.signal).then(result=>{if(!controller.signal.aborted)setLink(result);}).catch(e=>{if(!controller.signal.aborted)setError(e.message);});return()=>controller.abort();},[code,link]);return <section className="result-panel panel">{error?<ErrorBox message={error}/>:!link?<Loading/>:<><motion.div className="success-icon" initial={{opacity:0,scale:.85}} animate={{opacity:1,scale:1}}><Check weight="bold" size={30}/></motion.div><p className="eyebrow">READY TO GO</p><h1>Long story, short link.</h1><p>Your link is ready for its next destination.</p><label htmlFor="result-url">Your short URL</label><div className="result-value"><input id="result-url" readOnly value={link.shortUrl} onFocus={e=>e.target.select()}/><CopyButton value={link.shortUrl}/></div><p className="destination">{link.longUrl}</p><div className="result-actions"><Link className="button" to={`/analytics/${code}`}>View analytics<ArrowRight/></Link><Link className="button secondary" to="/dashboard">Create another link</Link></div></>}</section>}

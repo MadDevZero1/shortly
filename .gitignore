@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+!.env.*.example
+.neon
+.vercel/
+*.log
+*.tsbuildinfo
+docs/screenshots/browser-failure.png
+
+docs/screenshots/*.png
