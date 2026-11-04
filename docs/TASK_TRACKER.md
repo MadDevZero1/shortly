@@ -18,7 +18,7 @@ Markers: [ ] not started, [~] in progress, [x] completed, [!] blocked. Updated 2
 | Phase 5 frontend foundation/landing/auth | Lead + frontend_build | [x] | TypeScript/Vite build and Chrome sign-up/sign-in/session/logout verified; responsive screenshots inspected |
 | Phase 6 dashboard/analytics | Lead + frontend_build | [x] | Real connected data, mobile layouts, empty search, result and analytics verified |
 | Phase 7 real integration | Lead | [x] | Real provider JWT, two-user API isolation, browser create/redirect/updated stats/reload/sign-out/sign-in pass |
-| Phase 8 final QA/build | Lead | [~] | Local build passes; audits clean; 11 API tests + proxy test + live Chrome journey pass. Safari, recovery delivery and full accessibility/performance audits remain |
+| Phase 8 final QA/build | Lead | [~] | Local build passes; audits clean; 10 API tests + proxy test + Chrome journey pass. Safari, recovery delivery, full accessibility/performance and live platform validation remain |
 | Deployment approval | User | [x] | User explicitly requested Render and Vercel deployment on 2026-11-04 |
-| Phase 9 deployment | Lead | [x] | Vercel and Render live on commit e6f7996; production Neon schema/Auth, health, CORS and Chrome account/link journey passed |
-| Phase 10 portfolio readiness | Lead + release_docs | [~] | README, schema, decisions, interview guide, Postman, local screenshots and live demonstration exist; clean-clone remains unverified |
+| Phase 9 deployment | Lead | [~] | Vercel frontend READY; production Neon schema/Auth provisioned; Render cannot fetch private GitHub repository until its integration has access |
+| Phase 10 portfolio readiness | Lead + release_docs | [~] | README, schema, decisions, interview guide, Postman and real screenshots exist; clean-clone and full live demonstration pending backend deployment |

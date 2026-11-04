@@ -1,6 +1,6 @@
 # Deployment plan
 
-Status: frontend live at https://shortly-vault-cf00.vercel.app and backend live at https://shortly-api-stbw.onrender.com. Production Neon branch production (br-orange-glade-b51u6yff) has a separate shortly database with application schema and managed Auth on neondb. Existing neondb application tables were preserved. Live Chrome registration, creation, redirect, analytics, deletion, sign-out and sign-in passed on 2026-11-04.
+Status: frontend deployed to Vercel at https://shortly-vault-cf00.vercel.app; backend is not deployed. Production Neon branch production (br-orange-glade-b51u6yff) now has a separate shortly database with application schema and managed Auth on neondb. Existing neondb application tables were preserved. Render cannot fetch the private GitHub repository until its integration has repository access.
 
 ## Approval gates
 The user authorized continuous implementation on 2026-11-04. Deployment starts only after local integration, tests, browser review and production builds pass, and the user approves deployment. Do not alter production resources during development setup.
